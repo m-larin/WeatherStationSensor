@@ -1,0 +1,14 @@
+[Unit]
+Description=Weather server service
+After=syslog.target
+After=network.target
+After=mysql.service
+Requires=mysql.service
+
+
+[Service]
+Type=simple
+ExecStart=/home/pi/Project/weather-server/raspberry/weather-server/weather-server
+
+[Install]
+WantedBy=multi-user.target 
